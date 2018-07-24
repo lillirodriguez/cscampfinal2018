@@ -6,18 +6,37 @@ white = (255,255,255)
 coach = ' '
 class Template(object):
     #def __init__(self,img,text,opt,bckground,state):
-    def __init__(self,img,text,bckground):
+    def __init__(self,img,text,bckground,inp=False):
         self.img = pygame.image.load(img)
-        self.book = bckground
+        self.book = pygame.image.load(bckground) 
         self.text = text
         self.font = pygame.font.SysFont('Arial', 35)
-        #self.state = state
+        self.input = inp
 
-        # self.opt = {}
-        # key = 'a'
-        # for o in opt:
-        #     self.opt[key] = o
-        #     key = chr(ord(key) + 1)
+       
+    def call_tmp(self, window):
+        
+        window.fill(white)
+        self.draw(window)
+        pygame.display.flip()
+
+        while True:
+            for event in pygame.event.get():
+                if pygame.KEYDOWN == event.type:
+                    check = self.choose(event.key)
+                    if self.input == False:
+                        if check == ' ':
+                            return
+                        else:
+                            continue
+                    else:
+                        if check == '@':
+                            continue
+                        else:
+                            return check
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+
     
     def draw(self,window):
         x = (window.get_width() * 0.05)
@@ -36,11 +55,17 @@ class Template(object):
 
     def choose(self, press):
         if press == pygame.K_a:
-            pass
+            return 'A'
         elif press == pygame.K_b:
-            pass
+            return 'B'
         elif press == pygame.K_c:
-            pass
+            return 'C'
+        elif press == pygame.K_d:
+            return 'D'
+        elif press == pygame.K_SPACE:
+            return ' '
+        else:
+            return '@'
 
     def draw_text(self,window):
         book_width = self.book.get_width()
@@ -56,50 +81,17 @@ display_width = 1920
 display_height = 1080
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
-pygame.display.set_caption('Open Book')
 
 
-clock = pygame.time.Clock()
-crashed = False
 bkImg = pygame.image.load('book.png')
 
+tmp = Template('door.jpg','this is the prompt text',bkImg, True)
+print(tmp.call_tmp(gameDisplay))
 
-   
-# while not crashed:
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             crashed = True
-#
-
-
- 
-# def newPic(file, ):
-#     for i in picLyst = []:
-
-# title text    
-#title_font = pygame.font.SysFont('Arial', 115)
-#title = 'This Is The Title'
-#title_surf = title_font.render(title, False, black)
-    
 # accompanying picture on book
 # picLyst = ['blue.jpeg',  'choose.jpg', 'cs-class.jpeg', 'emoji.png', 'fam.jpg', 'fridge.jpg',  'knit.jpg',  'money.jpg', 'robot.jpg', 'time.jpg',
 #  'clock.jpg', 'door.jpg', 'fairy-wings.png',  'F-emoji.png',  'hide.jpg', 'light.jpg',  'red-green.jpg',  'tomorrow.jpg']
 
 # next button
-rect = pygame.Rect(1500, 450, 100, 100)
-
-tmp = Template('door.jpg','this is the prompt text',bkImg)
-
-while True:
-    for event in pygame.event.get():
-        if pygame.KEYDOWN == event.type:
-            tmp.choose(event.key)
-        if event.type == pygame.QUIT:
-            pygame.quit()
-
-    gameDisplay.fill(white)
-    tmp.draw(gameDisplay)
-    pygame.draw.rect(gameDisplay,pygame.Color(0,0,0),rect)
-        
-    pygame.display.update()
-    clock.tick(60)
+    
+   
