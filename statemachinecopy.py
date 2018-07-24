@@ -1,37 +1,43 @@
 from transitions import Machine
 import time
+import book
+import text
+import pygame
+
+pygame.init()
+display_width = 1920
+display_height = 1080
+
+gameDisplay = pygame.display.set_mode((display_width,display_height))
+pygame.display.set_caption('Open Book')
 
 delay = 0.0
+ 
 
 class myClass(object):
     def __init__(self):
         self.coach = ''
 
     def chapterone(self):
-        username = input("What should we call you? ")
-        time.sleep(delay)
-        print()
-        print("Welcome,", username, "!")
-        print("You are a freshman in CMPU101")
+        result = text.prompts['titlepage'].call_tmp(gameDisplay)
+        result == None
 
     def chaptertwo(self):
-        print("After class, you ask the coach for help. You say hi...")
-        time.sleep(delay)
-        print()
-        self.coach = input("What is the name of the coach? A) Liam, B) Hazelle, C) Arya, D) Emery? ")
-        time.sleep(delay)
-        if self.coach == "A":
+        result = text.prompts['inclass'].call_tmp(gameDisplay)
+        if result == "A":
             print("Liam is into horseback riding and has a secret passion for knitting.")
-            self.coach = "Liam"
-        elif self.coach == "B":
+            result = "Liam"
+        elif result == "B":
             print("Hazelle loves dogs! Enjoys midnight walks to the fridge.")
-            self.coach = "Hazelle"
-        elif self.coach == "C":
+            result = "Hazelle"
+        elif result == "C":
             print("Arya wants to design AI that does your laundry and has a massive stamp collection.")
-            self.coach = "Arya"  
-        elif self.coach == "D":
+            result = "Arya"  
+        elif result == "D":
             print("Emery like to paint nude self portraits, and eat blueberries.")
-            self.coach = "Emery"
+            result = "Emery"
+        else:
+
         time.sleep(delay)
 
     def chapterthree(self):
@@ -44,6 +50,7 @@ class myClass(object):
         time.sleep(delay)
         print()
 
+        text.prompts['moveorstay'].tmp_call(gameDisplay)
         choice1 = input("Do you move your hand or keep it under " + self.coach + "'s? A) Move or B) Stay ")
         time.sleep(delay)
         print()
