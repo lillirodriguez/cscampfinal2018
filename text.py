@@ -86,7 +86,7 @@ prompts = {
     'hazelle': book.Template('fridge.jpg', hazelle, bkImg),
     'arya': book.Template('robot.jpg', arya, bkImg),
     'emery': book.Template('blue.jpeg', emery, bkImg),
-    'backinclass': book.Template('cs-cass.jpeg', backinclass, bkImg),
+    'backinclass': book.Template('cs-class.jpeg', backinclass, bkImg),
     'moveorstay': book.Template('red-green.jpg', moveorstay, bkImg, True),
     'move': book.Template('emoji.png', move, bkImg), 
     'stay': book.Template('fam.jpg', stay, bkImg),
@@ -106,11 +106,6 @@ prompts = {
 
 def choose_coach(name):
     global prompts
-    #new_tmp = []
-    print(prompts)
+
     for tmp in prompts.values():
         tmp.text = tmp.text.format(name)
-    print(prompts)
-        #new_tmp.append((name, tmp))
-
-    #prompts = dict(new_tmp)

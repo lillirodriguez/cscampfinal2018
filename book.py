@@ -3,7 +3,7 @@ pygame.init()
 
 black = (0,0,0)
 white = (255,255,255)
-coach = ' '
+#coach = ' '
 class Template(object):
     #def __init__(self,img,text,opt,bckground,state):
     def __init__(self,img,text,bckground,inp=False):
@@ -30,7 +30,7 @@ class Template(object):
                         else:
                             continue
                     else:
-                        if check == '@':
+                        if check == '@' or check == ' ':
                             continue
                         else:
                             return check
@@ -77,16 +77,16 @@ class Template(object):
 
 
 
-display_width = 1920
-display_height = 1080
+# display_width = 1920
+# display_height = 1080
 
-gameDisplay = pygame.display.set_mode((display_width,display_height))
+# gameDisplay = pygame.display.set_mode((display_width,display_height))
 
 
-bkImg = pygame.image.load('book.png')
+# bkImg = pygame.image.load('book.png')
 
-tmp = Template('door.jpg','this is the prompt text',bkImg, True)
-print(tmp.call_tmp(gameDisplay))
+# tmp = Template('door.jpg','this is the prompt text',bkImg, True)
+# print(tmp.call_tmp(gameDisplay))
 
 # accompanying picture on book
 # picLyst = ['blue.jpeg',  'choose.jpg', 'cs-class.jpeg', 'emoji.png', 'fam.jpg', 'fridge.jpg',  'knit.jpg',  'money.jpg', 'robot.jpg', 'time.jpg',
