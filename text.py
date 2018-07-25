@@ -108,4 +108,5 @@ def choose_coach(name):
     global prompts
 
     for tmp in prompts.values():
-        tmp.text = tmp.text.format(name)
+        for line in range(len(tmp.text)):
+            tmp.text[line] = tmp.text[line].format(name)

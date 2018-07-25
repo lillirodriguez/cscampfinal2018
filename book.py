@@ -1,3 +1,4 @@
+import textwrap
 import pygame
 pygame.init()
 
@@ -9,8 +10,8 @@ class Template(object):
     def __init__(self,img,text,bckground,inp=False):
         self.img = pygame.image.load(img)
         self.book = pygame.image.load(bckground) 
-        self.text = text
-        self.font = pygame.font.SysFont('Arial', 35)
+        self.text = textwrap.wrap(text, width = 70)
+        self.font = pygame.font.SysFont('Arial', 20)
         self.input = inp
 
        
@@ -71,8 +72,13 @@ class Template(object):
         book_width = self.book.get_width()
         book_height = self.book.get_height()
 
-        text_surf = self.font.render(self.text, False, black)
-        window.blit(text_surf,(book_width//2.6,book_height//4))
+        frac_height = 6
+        for line in self.text:
+            if frac_height < 1:
+                break
+            text_surf = self.font.render(line, False, black)
+            window.blit(text_surf,(book_width//2.6,book_height//frac_height))
+            frac_height -= 0.5
 
 
 
