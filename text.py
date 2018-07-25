@@ -2,7 +2,7 @@ import book
 
 titlepage = ('What should we call you?')
 
-inclass = ('Welcome, username ! You are a freshman in CMPU101 \
+inclass = ('Welcome! You are a freshman in CMPU101 \
 After class, you ask the self.coach for help. You say hi... \
 What is the name of the coach? A) Liam, B) Hazelle, C) Arya, D) Emery?')
 
