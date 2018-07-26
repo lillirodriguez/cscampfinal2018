@@ -89,7 +89,7 @@ class Template(object):
             height = book_height//5
             for line in self.text:
                 text_surf = self.font.render(line, False, black)
-                window.blit(text_surf,(book_width//2.4,height))
+                window.blit(text_surf,(book_width//2.6,height))
                 height += 30
         else:
             height = book_height//5
