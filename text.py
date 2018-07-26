@@ -49,7 +49,7 @@ You can't even find the words. You turn away from {0} to catch your breath.")
 capitalist = ("{0} says, 'I am a Capitalist. \
 I have been exchanging in the stock market for a year now. \
 I have a hookup on the inside that tells me where to put my money. But now he's not responding to any of my calls. I think he got, got. . . \
-The italian mafia is after me, they left me a note in my car threatening us.' \
+The Italian mafia is after me, they left me a note in my car threatening us.' \
 You can't even find the words. You turn away from {0} to catch your breath.")
 
 fairy = ("{0} says, 'I am a Fairy.\
