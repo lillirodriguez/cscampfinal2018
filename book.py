@@ -7,14 +7,27 @@ white = (255,255,255)
 #coach = ' '
 class Template(object):
     #def __init__(self,img,text,opt,bckground,state):
-    def __init__(self,img,text,bckground,inp=False):
+    def __init__(self,img,text,bckground,inp=False, title=False):
         self.img = pygame.image.load(img)
         self.book = pygame.image.load(bckground) 
-        self.text = textwrap.wrap(text, width = 70)
-        self.font = pygame.font.SysFont('Arial', 20)
+        self.text = None
+        self.extract_response(textwrap.wrap(text, width = 50))
+        self.font = pygame.font.SysFont('Arial', 20,1)
         self.input = inp
+        self.title = title
 
-       
+    def extract_response(self, lines):
+        for line in range(len(lines)):
+            if "A)" in lines[line]:
+                start= lines[line].find("A)")
+                response_lines=textwrap.wrap(lines[line][start:]+''.join(lines[line+1:]), width=50)
+                lines[line]= lines[line][:start]
+                self.text = lines[:line+1] + response_lines
+                break
+        else:
+            self.text = lines
+
+
     def call_tmp(self, window):
         
         window.fill(white)
@@ -72,13 +85,18 @@ class Template(object):
         book_width = self.book.get_width()
         book_height = self.book.get_height()
 
-        frac_height = 6
-        for line in self.text:
-            if frac_height < 1:
-                break
-            text_surf = self.font.render(line, False, black)
-            window.blit(text_surf,(book_width//2.6,book_height//frac_height))
-            frac_height -= 0.5
+        if self.title:
+            height = book_height//5
+            for line in self.text:
+                text_surf = self.font.render(line, False, black)
+                window.blit(text_surf,(book_width//2.4,height))
+                height += 30
+        else:
+            height = book_height//5
+            for line in self.text:
+                text_surf = self.font.render(line, False, black)
+                window.blit(text_surf,(book_width//2.8,height))
+                height += 30
 
 
 

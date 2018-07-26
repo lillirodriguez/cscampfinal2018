@@ -20,10 +20,7 @@ The palms of your hands sweat and you begin to think there are vibes between you
 
 moveorstay = ("Do you move your hand or keep it under {0}'s? A) Move or B) Stay")
 
-move = ("You move your hand, {0} says, 'oh Im sorry'\
-You shoot them side-eye, and say 'I'm not into holding hands.'\
-You slowly move your hand to their thigh. You both lock eyes. The vibes are definitely there...\
-You know that this is just the beginning of something great between you two!")
+move = ("You move your hand, {0} says, 'oh Im sorry.' You shoot them side-eye, and say 'I'm not into holding hands.' You slowly move your hand to their thigh. You both lock eyes. The vibes are definitely there... You know that this is just the beginning of something great between you two!")
 
 stay = ("you catch {0}'s eye and they smile at you...\
 You imagine yourself 10 years in the future, married, coparenting, and happily ever after.\
@@ -80,23 +77,23 @@ THE END!")
 
 bkImg = 'book.png'
 prompts = {
-    'titlepage': book.Template('choose.jpg', titlepage, bkImg),
-    'inclass': book.Template('cs-class.jpeg', inclass, bkImg, True),
+    'titlepage': book.Template('choose.jpg', titlepage, bkImg, title=True),
+    'inclass': book.Template('cs-class.jpeg', inclass, bkImg, inp=True),
     'liam': book.Template('knit.jpg', liam, bkImg),
     'hazelle': book.Template('fridge.jpg', hazelle, bkImg),
     'arya': book.Template('robot.jpg', arya, bkImg),
     'emery': book.Template('blue.jpeg', emery, bkImg),
     'backinclass': book.Template('cs-class.jpeg', backinclass, bkImg),
-    'moveorstay': book.Template('red-green.jpg', moveorstay, bkImg, True),
+    'moveorstay': book.Template('red-green.jpg', moveorstay, bkImg, inp=True),
     'move': book.Template('emoji.png', move, bkImg), 
     'stay': book.Template('fam.jpg', stay, bkImg),
     'move': book.Template('emoji.png', move, bkImg),
     'threemonths': book.Template('time.jpg', threemonths, bkImg),
-    'whatiscoach': book.Template('threepic.png', whatiscoach, bkImg, True),
+    'whatiscoach': book.Template('threepic.png', whatiscoach, bkImg, inp=True),
     'demigod': book.Template('threepic.png', demigod, bkImg),
     'capitalist': book.Template('threepic.png', capitalist, bkImg),
     'fairy': book.Template('threepic.png', fairy, bkImg),
-    'whatisresponse': book.Template('threepic.png', whatisresponse, bkImg, True),
+    'whatisresponse': book.Template('threepic.png', whatisresponse, bkImg, inp=True),
     'fear': book.Template('F-emoji.png', fear, bkImg),
     'clock': book.Template('clock.jpg', clock, bkImg),
     'door': book.Template('door.jpg', door, bkImg), 
