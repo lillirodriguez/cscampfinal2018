@@ -1,8 +1,8 @@
 import book
 
-titlepage = ('What should we call you?')
+titlepage = ('Welcome! Press space to continue')
 
-inclass = ("Welcome! You are a freshman in CMPU101. \
+inclass = ("You are a freshman in CMPU101. \
 After class, you ask the coach for help. You say hi. . . \
 What is the name of the coach? A) Liam, B) Hazelle, C) Arya, D) Emery?")
 
