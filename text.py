@@ -23,8 +23,8 @@ moveorstay = ("Do you move your hand or keep it under {0}'s? A) Move or B) Stay"
 move = ("You move your hand, {0} says, 'Oh, I'm sorry.' You shoot them side-eye, and say 'I'm not into holding hands.' You slowly move your hand to their thigh. You both lock eyes. The vibes are definitely there. . . You know that this is just the beginning of something great between you two!")
 
 stay = ("You catch {0}'s eye and they smile at you... \
-You imagine yourself 10 years in the future, married, coparenting, and happily ever after. \
-...But then {0} asks you to explain line 37. \
+You imagine yourself 10 years in the future, married, coparenting, and happily ever after \
+. . . But then {0} asks you to explain line 37. \
 You realize you've been staring and drooling just a little bit. \
 You wipe the spit out of the corner of your mouth and smile the biggest full tooth grin. \
 You know that this is just the beginning of something great between you two!")
@@ -72,7 +72,7 @@ door = ("{0} responds,'Noooo I need you to believe me!!'")
 
 hide = ("You're heartbroken, the weight of this news knocks you off your feet. You slump into a ball on the floor and cry until...")
 
-nextday = ("You wake up!!! Its dark outside your window. You realize it was all a dream. \
+nextday = ("You wake up!!! It's dark outside your window. You realize it was all a dream. \
 THE END!")
 
 bkImg = 'book.png'
